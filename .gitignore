@@ -1,2 +1,7 @@
 *.html
 target/
+.idea
+*.iml
+.class
+out
+*.xml
