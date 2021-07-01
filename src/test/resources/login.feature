@@ -24,10 +24,13 @@ Feature:Login
     Then ensure RED message is displayed
     And ensure RED message has "No match for Username and/or Password." text
     Examples:
-      | username | password      |
-      | admin    | parola123456! |
-      |          |               |
-      | adm      | parola123!    |
+      | username  | password       |
+      | admin     | parola123456!  |
+      |           |                |
+      | adm       | parola123!     |
+      | admin123  | parola123456!  |
+      | ..        | ..             |
+      | adm 12333 | parola123!4556 |
 
   @TC0005 @positive @sanity
   Scenario: Valid Login user page
