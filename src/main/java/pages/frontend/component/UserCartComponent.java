@@ -15,7 +15,7 @@ public class UserCartComponent extends Base {
         click(CART_BUTTON);
     }
 
-    public static void verifyItemIsInCart(String text) {
+    public static void verifyTheTopItemInCartIs(String text) {
         elementContainsText(TOP_ITEM_IN_CART,text,"BUG");
     }
 

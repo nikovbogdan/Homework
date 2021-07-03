@@ -16,7 +16,7 @@ public class UserCartComponentTest extends BaseTests {
         UserPDP.addToCart();
         UserPDP.verifyGreenMessageIsDisplayed();
         UserCartComponent.clickOnCartButton();
-        UserCartComponent.verifyItemIsInCart("MacBook");
+        UserCartComponent.verifyTheTopItemInCartIs("MacBook");
         UserCartComponent.verifyItemQuantity("x 1");
 
 
