@@ -9,7 +9,7 @@ import utils.Waiter;
 
 public class UserCartComponentTest extends BaseTests {
 
-    @Test
+    @Test(testName = "TC #3")
     public void addItemToCart(){
         UserHomePage.open();
         UserHomePage.viewMacBookDetails();
@@ -20,7 +20,7 @@ public class UserCartComponentTest extends BaseTests {
         UserCartComponent.verifyTheTopItemInCartIs("MacBook");
         UserCartComponent.verifyItemQuantity("x 1");
     }
-    @Test
+    @Test(testName = "TC #5")
     public void addItemToCart2(){
         UserHomePage.open();
         UserHomePage.viewMacBookDetails();
