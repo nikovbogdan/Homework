@@ -33,4 +33,5 @@ public class UserPDP extends Base {
     public static void verifyGreenMessageIsDisplayed() {
         isElementDisplayed(GREEN_MESSAGE);
     }
+
 }
