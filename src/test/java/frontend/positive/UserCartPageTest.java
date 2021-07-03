@@ -11,7 +11,7 @@ import pages.frontend.component.UserHeader;
 
 public class UserCartPageTest extends BaseTests {
 
-    @Test
+    @Test(testName = "TC #6")
     public void changeQuantity(){
         UserHomePage.open();
         UserHomePage.viewIphoneDetails();
