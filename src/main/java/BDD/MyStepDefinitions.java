@@ -11,7 +11,7 @@ import pages.backend.AdminLoginPage;
 import pages.backend.component.AdminHeader;
 import pages.frontend.UserForgottenPasswordPage;
 import pages.frontend.UserLoginPage;
-import pages.frontend.component.UserHomePage;
+import pages.frontend.UserHomePage;
 import utils.Browser;
 
 public class MyStepDefinitions extends Base {

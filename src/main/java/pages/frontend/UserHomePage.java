@@ -1,4 +1,4 @@
-package pages.frontend.component;
+package pages.frontend;
 
 import core.Base;
 import org.openqa.selenium.By;

@@ -4,7 +4,7 @@ import core.BaseTests;
 import pages.frontend.UserPDP;
 import org.testng.annotations.Test;
 import pages.frontend.component.UserCartComponent;
-import pages.frontend.component.UserHomePage;
+import pages.frontend.UserHomePage;
 import utils.Waiter;
 
 public class UserCartComponentTest extends BaseTests {
