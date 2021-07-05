@@ -3,7 +3,7 @@ package frontend.negative;
 import core.BaseTests;
 import org.testng.annotations.Test;
 import pages.frontend.UserForgottenPasswordPage;
-import pages.frontend.component.UserHomePage;
+import pages.frontend.UserHomePage;
 import pages.frontend.UserLoginPage;
 
 public class UserLoginTest extends BaseTests {
