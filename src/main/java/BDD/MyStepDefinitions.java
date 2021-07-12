@@ -156,4 +156,5 @@ public class MyStepDefinitions extends Base {
     public void verifyTheItemQuantityIs(String quantity) {
         UserCartComponent.verifyItemQuantity("x " + quantity);
     }
+
 }

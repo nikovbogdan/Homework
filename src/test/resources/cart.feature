@@ -12,3 +12,5 @@ Feature: Cart
     And verify the "MacBook" product is at the 1st place in the cart
     And verify the item quantity is "1"
 
+
+
