@@ -30,17 +30,23 @@ public class MyStepDefinitions extends Base {
 
     @Given("user navigates to {string} page")
     public void user_navigates_to_page(String page) {
-        if (page.equals("admin")) {
-            AdminLoginPage.open();
-        } else if (page.equals("user")) {
-            UserHomePage.open();
-        } else {
-            try {
-                throw new NoSuchMethodException(page);
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-                System.out.println(page + " page doesn't exits.");
-            }
+        switch (page) {
+            case "admin":
+                AdminLoginPage.open();
+                break;
+            case "user":
+                UserHomePage.open();
+                break;
+            case "home":
+                UserHomePage.navigateToHome();
+            default:
+                try {
+                    throw new NoSuchMethodException(page);
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                    System.out.println(page + " page doesn't exits.");
+                }
+                break;
         }
     }
 
@@ -112,7 +118,7 @@ public class MyStepDefinitions extends Base {
             case "MacBook":
                 UserHomePage.viewMacBookDetails();
                 break;
-            case "Iphone":
+            case "iPhone":
                 UserHomePage.viewIphoneDetails();
                 break;
 
@@ -136,8 +142,8 @@ public class MyStepDefinitions extends Base {
         UserPDP.addToCart();
     }
 
-    @Then("ensure the green message is displayed")
-    public void ensureTheGreenMessageIsDisplayed() {
+    @Then("ensure the item is added message is displayed")
+    public void ensureTheProductIsAddedMessageIsDisplayed() {
         UserPDP.verifyGreenMessageIsDisplayed();
     }
 
@@ -148,7 +154,7 @@ public class MyStepDefinitions extends Base {
 
 
     @And("verify the {string} product is at the 1st place in the cart")
-    public void verifyTheProductIsInTheCart(String product) {
+    public void verifyTheProductIsInTheCartAtPositionOne(String product) {
         UserCartComponent.verifyTheTopItemInCartIs(product);
     }
 
@@ -157,4 +163,8 @@ public class MyStepDefinitions extends Base {
         UserCartComponent.verifyItemQuantity("x " + quantity);
     }
 
+    @And("verify the {string} product is in the cart")
+    public void verifyTheProductIsInTheCart(String product) {
+        UserCartComponent.verifyItemIsInCart(product);
+    }
 }
