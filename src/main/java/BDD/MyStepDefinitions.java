@@ -12,6 +12,8 @@ import pages.backend.component.AdminHeader;
 import pages.frontend.UserForgottenPasswordPage;
 import pages.frontend.UserLoginPage;
 import pages.frontend.UserHomePage;
+import pages.frontend.UserPDP;
+import pages.frontend.component.UserCartComponent;
 import utils.Browser;
 
 public class MyStepDefinitions extends Base {
@@ -28,17 +30,23 @@ public class MyStepDefinitions extends Base {
 
     @Given("user navigates to {string} page")
     public void user_navigates_to_page(String page) {
-        if (page.equals("admin")) {
-            AdminLoginPage.open();
-        } else if (page.equals("user")) {
-            UserHomePage.open();
-        } else {
-            try {
-                throw new NoSuchMethodException(page);
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-                System.out.println(page + " page doesn't exits.");
-            }
+        switch (page) {
+            case "admin":
+                AdminLoginPage.open();
+                break;
+            case "user":
+                UserHomePage.open();
+                break;
+            case "home":
+                UserHomePage.navigateToHome();
+            default:
+                try {
+                    throw new NoSuchMethodException(page);
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                    System.out.println(page + " page doesn't exits.");
+                }
+                break;
         }
     }
 
@@ -104,4 +112,59 @@ public class MyStepDefinitions extends Base {
     }
 
 
+    @And("user views {string} product details")
+    public void userViewsProductDetails(String item) {
+        switch (item) {
+            case "MacBook":
+                UserHomePage.viewMacBookDetails();
+                break;
+            case "iPhone":
+                UserHomePage.viewIphoneDetails();
+                break;
+
+            default:
+                try {
+                    throw new NoSuchMethodException(item);
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                    System.out.println(item + " item doesn't exits.");
+                }
+        }
+    }
+
+    @And("user changes the product quantity to {string}")
+    public void userChangesTheProductQuantityTo(String quantity) {
+        UserPDP.productQuantity(quantity);
+    }
+
+    @And("user adds the product to the cart")
+    public void userAddsTheProductToTheCart() {
+        UserPDP.addToCart();
+    }
+
+    @Then("ensure the item is added message is displayed")
+    public void ensureTheProductIsAddedMessageIsDisplayed() {
+        UserPDP.verifyGreenMessageIsDisplayed();
+    }
+
+    @And("click on the cart component button")
+    public void clickOnTheCartComponentButton() {
+        UserCartComponent.clickOnCartButton();
+    }
+
+
+    @And("verify the {string} product is at the 1st place in the cart")
+    public void verifyTheProductIsInTheCartAtPositionOne(String product) {
+        UserCartComponent.verifyTheTopItemInCartIs(product);
+    }
+
+    @And("verify the item quantity is {string}")
+    public void verifyTheItemQuantityIs(String quantity) {
+        UserCartComponent.verifyItemQuantity("x " + quantity);
+    }
+
+    @And("verify the {string} product is in the cart")
+    public void verifyTheProductIsInTheCart(String product) {
+        UserCartComponent.verifyItemIsInCart(product);
+    }
 }

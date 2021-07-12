@@ -2,6 +2,7 @@ package pages.frontend;
 
 import core.Base;
 import org.openqa.selenium.By;
+import utils.Waiter;
 
 public class UserPDP extends Base {
 
@@ -32,6 +33,7 @@ public class UserPDP extends Base {
      */
     public static void verifyGreenMessageIsDisplayed() {
         isElementDisplayed(GREEN_MESSAGE);
+        Waiter.waitFor(1);
     }
 
 }

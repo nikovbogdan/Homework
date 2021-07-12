@@ -31,7 +31,6 @@ public class UserCartComponentTest extends BaseTests {
         UserHomePage.viewIphoneDetails();
         UserPDP.addToCart();
         UserPDP.verifyGreenMessageIsDisplayed();
-        Waiter.waitFor(2);
         UserCartComponent.clickOnCartButton();
         UserCartComponent.verifyItemIsInCart("iPhone");
         UserCartComponent.printAllItemsInCart();
