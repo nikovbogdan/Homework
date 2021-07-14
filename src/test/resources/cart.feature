@@ -25,3 +25,13 @@ Feature: Cart
       And click on the cart component button
       And verify the "iPhone" product is in the cart
 
+  Scenario: Change quantity of a product
+    Given user navigates to "user" page
+    And user views "MacBook" product details
+    And user changes the product quantity to "5"
+    And user adds the product to the cart
+    Then ensure the item is added message is displayed
+    And select cart from user header
+    And change the quantity to "2"
+    And verify the message for changing the quantity is displayed
+
