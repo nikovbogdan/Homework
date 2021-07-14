@@ -9,11 +9,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.backend.AdminLoginPage;
 import pages.backend.component.AdminHeader;
-import pages.frontend.UserForgottenPasswordPage;
-import pages.frontend.UserLoginPage;
-import pages.frontend.UserHomePage;
-import pages.frontend.UserPDP;
+import pages.frontend.*;
 import pages.frontend.component.UserCartComponent;
+import pages.frontend.component.UserHeader;
 import utils.Browser;
 
 public class MyStepDefinitions extends Base {
@@ -166,5 +164,21 @@ public class MyStepDefinitions extends Base {
     @And("verify the {string} product is in the cart")
     public void verifyTheProductIsInTheCart(String product) {
         UserCartComponent.verifyItemIsInCart(product);
+    }
+
+    @And("select cart from user header")
+    public void selectCartFromUserHeader() {
+        UserHeader.selectCart();
+    }
+
+    @And("change the quantity to {string}")
+    public void changeTheQuantityTo(String newQuantity) {
+        UserCartPage.changeQuantityTo(newQuantity);
+    }
+
+
+    @And("verify the message for changing the quantity is displayed")
+    public void verifyTheMessageForChangingTheQuantityIsDisplayed() {
+        UserCartPage.verifyGreenMessageIsDisplayed();
     }
 }
