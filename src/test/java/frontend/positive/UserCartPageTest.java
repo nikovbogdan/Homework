@@ -22,6 +22,6 @@ public class UserCartPageTest extends BaseTests {
         UserCartPage.changeQuantityTo("3");
         UserCartPage.verifyGreenMessageIsDisplayed();
         UserCartComponent.clickOnCartButton();
-        UserCartComponent.verifyItemQuantity("3");
+        UserCartComponent.verifyFirstItemQuantity("3");
     }
 }

@@ -5,7 +5,6 @@ import pages.frontend.UserPDP;
 import org.testng.annotations.Test;
 import pages.frontend.component.UserCartComponent;
 import pages.frontend.UserHomePage;
-import utils.Waiter;
 
 public class UserCartComponentTest extends BaseTests {
 
@@ -18,7 +17,7 @@ public class UserCartComponentTest extends BaseTests {
         UserPDP.verifyGreenMessageIsDisplayed();
         UserCartComponent.clickOnCartButton();
         UserCartComponent.verifyTheTopItemInCartIs("MacBook");
-        UserCartComponent.verifyItemQuantity("x 1");
+        UserCartComponent.verifyFirstItemQuantity("x 1");
     }
     @Test(testName = "TC #5")
     public void addItemToCart2(){

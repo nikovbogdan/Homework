@@ -16,24 +16,39 @@ public class AdminPLP extends Base {
     private static final By GREEN_MESSAGE = By.cssSelector(".alert-success");
     private static final By DELETE_ITEM_BUTTON = By.xpath("//i[@class='fa fa-trash-o']");
 
-
+    /**
+     * Clicks on + button ("ADD NEW") when on PLP.
+     */
     public static void addNewItem() {
         click(ADD_NEW_ITEM_BUTTON);
     }
 
+    /**
+     * Fills the New Item Form and clicks SAVE.
+     * @param productName enters a name for a product
+     * @param metaTag enters meta tag for a product
+     * @param model enters the model of a product
+     */
     public static void completeNewItemForm(String productName,String metaTag,String model) {
         type(NEW_PRODUCT_NAME_INPUT,productName);
         type(NEW_PRODUCT_META_TAG_INPUT,metaTag);
         click(DATA_TAB);
         type(NEW_PRODUCT_MODEL_INPUT,model);
         click(SAVE_BUTTON);
-
     }
 
+    /**
+     * Ensures that the message for newly created item is displayed.
+     */
     public static void verifyGreenMessageIsDisplayed() {
          Assert.assertTrue(isElementDisplayed(GREEN_MESSAGE));
     }
 
+    /**
+     * Ensures the message for newly created item contains specific text.
+     * @param expectedMessage the message you expect to be shown in green message.
+     * @param ifNot if the message is not as the expected.
+     */
     public static void verifyGreenMessageContainsText(String expectedMessage,String ifNot) {
         Assert.assertTrue(Browser.driver.findElement(GREEN_MESSAGE).getText().contains(expectedMessage));
     }
@@ -49,6 +64,7 @@ public class AdminPLP extends Base {
         Browser.driver.switchTo().alert().accept();
 
     }
+
     /**
      * Deletes the first product from PLP list.
      */
@@ -57,8 +73,8 @@ public class AdminPLP extends Base {
         Waiter.waitFor(1);
         click(DELETE_ITEM_BUTTON);
         Browser.driver.switchTo().alert().accept();
-
     }
+
     /**
      * Deletes all products from PLP list.
      */

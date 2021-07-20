@@ -19,6 +19,7 @@ public class AdminLoginPage extends Base {
     public static void open() {
         Browser.driver.get(Urls.ADMIN_URL);
     }
+
     /**
      * Login to admin area with provided credentials
      * @param username the username you would like to login with.
@@ -29,12 +30,14 @@ public class AdminLoginPage extends Base {
         type(PASSWORD_INPUT,password);
         click(SUBMIT_BUTTON);
     }
+
     /**
      * Verifies the validation(RED) message is displayed.
      */
     public static void verifyRedMessageIsDisplayed() {
         Assert.assertTrue(isElementDisplayed(ALERT_RED_MESSAGE_DIV));
     }
+
     /**
      * Verifies the text in the validation(RED) message is as the expected.
      * @param expectedMessage the message we expect to be shown

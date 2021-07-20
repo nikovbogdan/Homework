@@ -158,7 +158,7 @@ public class MyStepDefinitions extends Base {
 
     @And("verify the item quantity is {string}")
     public void verifyTheItemQuantityIs(String quantity) {
-        UserCartComponent.verifyItemQuantity("x " + quantity);
+        UserCartComponent.verifyFirstItemQuantity("x " + quantity);
     }
 
     @And("verify the {string} product is in the cart")
