@@ -37,7 +37,7 @@ public class UserCartComponent extends Base {
     }
 
     /**
-     * Ensures the quantity of the first item in cart.
+     * Ensures the quantity of the first item in cart(component).
      * @param expectedQuantity the expected quantity.
      */
     public static void verifyFirstItemQuantity(String expectedQuantity) {
