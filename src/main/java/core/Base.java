@@ -55,7 +55,7 @@ public class Base {
      * @param ifNot the message to display if the element doesn't contains the expected text.
      */
     protected static void elementContainsText(By locator, String expectedText,String ifNot){
-        Assert.assertTrue(Browser.driver.findElement(locator).getText().contains(expectedText),ifNot);
+        Assert.assertTrue(getTextOfTheElement(locator).contains(expectedText),ifNot);
     }
     /**
      * Asserts does element HAS expectedText or not.

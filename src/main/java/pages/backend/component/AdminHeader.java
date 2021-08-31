@@ -15,7 +15,8 @@ public class AdminHeader extends Base {
      * @param messageIfFails the message that will appear if the assert fails.
      */
     public static void verifyUserFullName(String expectedFullName,String messageIfFails) {
-        Assert.assertEquals(getTextOfTheElement(USER_FULL_NAME),expectedFullName,messageIfFails);
+        elementContainsText(USER_FULL_NAME,expectedFullName,messageIfFails);
+//        Assert.assertEquals(getTextOfTheElement(USER_FULL_NAME),expectedFullName,messageIfFails);
     }
 
     /**
