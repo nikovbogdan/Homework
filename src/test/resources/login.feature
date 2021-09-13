@@ -53,4 +53,3 @@ Feature:Login
     And user enters "bogdan@mailinator.com" email, associated whit his account, to receive password reset link
     Then ensure GREEN message is displayed
     And ensure GREEN message has "An email with a confirmation link has been sent your email address." text
-
