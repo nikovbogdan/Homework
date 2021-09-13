@@ -9,7 +9,7 @@ public class UserHomePage extends Base {
 
     private final static By MAC_BOOK_PRODUCT = By.xpath("//a[contains(text(),'MacBook')]");
     private final static By IPHONE_PRODUCT = By.xpath("//a[contains(text(),'iPhone')]");
-    private final static By NAVIGATE_TO_HOME = By.xpath("//a[contains(text(),'Pragmatic Test Store')]");
+    private final static By NAVIGATE_TO_HOME = By.id("logo");
 
     /**
      * Browser navigates to shop.pragmatic.bg
