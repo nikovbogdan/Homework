@@ -10,6 +10,7 @@ public class UserCartPage extends Base {
     private final static By UPDATE_QUANTITY_BUTTON = By.xpath("//span/button[@type='submit']");
     private final static By GREEN_MESSAGE = By.xpath("//div[contains(@class,'alert alert-success alert-dismissible')]");
     private final static By REMOVE_BUTTON = By.cssSelector(".fa-times-circle");
+    private final static By CART_CONTENT = By.id("content");
 
     /**
      * Puts values in Quantity input field and submits the change
@@ -33,4 +34,7 @@ public class UserCartPage extends Base {
     }
 
 
+    public static void verifyCartIsEmpty() {
+        elementContainsText(CART_CONTENT,"Your shopping cart is empty!","BUG");
+    }
 }

@@ -34,7 +34,8 @@ public class UserCartPageTest extends BaseTests {
         UserPDP.verifyGreenMessageIsDisplayed();
         UserHeader.selectCart();
         UserCartPage.removeItem();
-        UserCartComponent.clickOnCartButton();
-        UserCartComponent.verifyCartIsEmpty();
+        UserHeader.selectCart();
+        UserCartPage.verifyCartIsEmpty();
+        Waiter.waitFor(2);
     }
 }
