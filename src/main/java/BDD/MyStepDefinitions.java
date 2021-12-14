@@ -13,6 +13,7 @@ import pages.frontend.*;
 import pages.frontend.component.UserCartComponent;
 import pages.frontend.component.UserHeader;
 import utils.Browser;
+import utils.Waiter;
 
 public class MyStepDefinitions extends Base {
 
@@ -180,5 +181,20 @@ public class MyStepDefinitions extends Base {
     @And("verify the message for changing the quantity is displayed")
     public void verifyTheMessageForChangingTheQuantityIsDisplayed() {
         UserCartPage.verifyGreenMessageIsDisplayed();
+    }
+
+    @And("user verifies that the cart is empty")
+    public void userVerifiesThatTheCartIsEmpty() {
+        UserCartPage.verifyCartIsEmpty();
+    }
+
+    @And("user waits for a second")
+    public void userWaitsForASecond() {
+        Waiter.waitFor(2);
+    }
+
+    @And("user removes the item")
+    public void userRemovesTheItem() {
+        UserCartPage.removeItem();
     }
 }
