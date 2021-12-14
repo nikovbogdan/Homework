@@ -3,6 +3,7 @@ package pages.frontend.component;
 import core.Base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import utils.Browser;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class UserCartComponent extends Base {
     private static final By TOP_ITEM_IN_CART = By.xpath("//tbody/tr[1]/td[2]/a[1]");
     private static final By ALL_ITEMS_IN_CART = By.cssSelector(".table-striped");
     private static final By QUANTITY_IN_CART = By.xpath("//table[@class='table table-striped']/tbody/tr[1]/td[3]");
+    private static final By CART_DROPDOWN = By.xpath("//p[@class='text-center']");
 
     /**
      * Clicks on Cart component Button
@@ -53,5 +55,9 @@ public class UserCartComponent extends Base {
             System.out.println(element.getText());
         }
 
+    }
+
+    public static void verifyCartIsEmpty() {
+        elementContainsText(CART_DROPDOWN,"Your shopping cart is empty!","BUG");
     }
 }

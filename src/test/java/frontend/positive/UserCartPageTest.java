@@ -7,6 +7,7 @@ import pages.frontend.UserPDP;
 import pages.frontend.UserHomePage;
 import pages.frontend.component.UserCartComponent;
 import pages.frontend.component.UserHeader;
+import utils.Waiter;
 
 
 public class UserCartPageTest extends BaseTests {
@@ -23,5 +24,17 @@ public class UserCartPageTest extends BaseTests {
         UserCartPage.verifyGreenMessageIsDisplayed();
         UserCartComponent.clickOnCartButton();
         UserCartComponent.verifyFirstItemQuantity("3");
+    }
+    @Test(testName = "TC #4")
+    public void removeItem(){
+        UserHomePage.open();
+        UserHomePage.viewIphoneDetails();
+        UserPDP.productQuantity("1");
+        UserPDP.addToCart();
+        UserPDP.verifyGreenMessageIsDisplayed();
+        UserHeader.selectCart();
+        UserCartPage.removeItem();
+        UserCartComponent.clickOnCartButton();
+        UserCartComponent.verifyCartIsEmpty();
     }
 }
